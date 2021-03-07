@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    image: myupload:latest
+    container_name: myupload
+    ports:
+    - "80:8000"
+    build: .
+    volumes:
+    - ./uploads:/app/uploads

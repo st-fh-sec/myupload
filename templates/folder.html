@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+{% block content %}
+<h1>Contents of {{token}}</h1>
+
+<ul>
+{% for file in files %}
+	<li><a href="/download?token={{token}}&file={{file}}">{{file}}</a></li>
+{% endfor %}
+</ul>
+<form action="/upload">
+<input type="hidden" name="token" value="{{token}}">
+<input type="submit" value="add file" class="btn btn-primary"></input>
+</form>
+{% endblock %}
